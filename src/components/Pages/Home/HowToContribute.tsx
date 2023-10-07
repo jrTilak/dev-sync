@@ -10,10 +10,6 @@ const HowToContribute = () => {
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
               How to contribute?
             </h2>
-            <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              itaque repudiandae hic ut, consectetur eos optio voluptas
-            </p>
           </div>
 
           <ul className="max-w-md mx-auto mt-16 space-y-12">
@@ -41,11 +37,10 @@ const HowToContribute = () => {
               </div>
               <div className="ml-6">
                 <h3 className="text-lg font-semibold text-black">
-                  Login using your Github account
+                  Login
                 </h3>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Come and connect with us.
                 </p>
               </div>
             </li>
@@ -77,8 +72,7 @@ const HowToContribute = () => {
                   Search for the project
                 </h3>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  We'll provide you the relatable project based on your search.
                 </p>
               </div>
             </li>
@@ -105,8 +99,34 @@ const HowToContribute = () => {
                   Request and Enroll
                 </h3>
                 <p className="mt-4 text-base text-gray-600">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Request and enroll in projects you are interested in.
+                </p>
+              </div>
+            </li>
+
+            <li className="relative flex items-start">
+              <div className="relative flex items-center justify-center flex-shrink-0 w-16 h-16 bg-white rounded-full shadow">
+                <svg
+                  className="w-10 h-10 text-fuchsia-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+              <div className="ml-6">
+                <h3 className="text-lg font-semibold text-black">
+                  Sign Up
+                </h3>
+                <p className="mt-4 text-base text-gray-600">
+                  Join our community by signing up and start contributing.
                 </p>
               </div>
             </li>
@@ -116,4 +136,5 @@ const HowToContribute = () => {
     </>
   );
 };
+
 export default HowToContribute;
