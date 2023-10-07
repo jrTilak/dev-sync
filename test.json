@@ -1,0 +1,158 @@
+[
+  {
+    "description": ".....",
+    "difficulty": "begginer, medium, expert",
+    "img": "....",
+    "metaDesc": "....",
+    "skillsNeeded": [
+      {
+        "label": "Reactjs",
+        "value": "Reactjs"
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tags": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tech": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "title": "....",
+    "type": "Open science, Open source",
+    "sourceLink": "...."
+  },
+  {
+    "description": ".....",
+    "difficulty": "begginer, medium, expert",
+    "img": "....",
+    "metaDesc": "....",
+    "skillsNeeded": [
+      {
+        "label": "Reactjs",
+        "value": "Reactjs"
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tags": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tech": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "title": "....",
+    "type": "Open science, Open source",
+    "sourceLink": "...."
+  },
+  {
+    "description": ".....",
+    "difficulty": "begginer, medium, expert",
+    "img": "....",
+    "metaDesc": "....",
+    "skillsNeeded": [
+      {
+        "label": "Reactjs",
+        "value": "Reactjs"
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tags": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tech": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "title": "....",
+    "type": "Open science, Open source",
+    "sourceLink": "...."
+  },
+  {
+    "description": ".....",
+    "difficulty": "begginer, medium, expert",
+    "img": "....",
+    "metaDesc": "....",
+    "skillsNeeded": [
+      {
+        "label": "Reactjs",
+        "value": "Reactjs"
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tags": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "tech": [
+      {
+        "label": "....",
+        "value": "...."
+      },
+      {
+        "label": "....",
+        "value": "...."
+      }
+    ],
+    "title": "....",
+    "type": "Open science, Open source",
+    "sourceLink": "...."
+  }
+]
