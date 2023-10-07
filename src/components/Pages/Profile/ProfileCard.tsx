@@ -56,14 +56,16 @@ const ProfileCard = ({ isMyProfile }) => {
       </div>
       <div className="flex flex-wrap">
         <h1 className="font-bold">Skills:&nbsp; </h1>
-        {skills &&
+        {skills ?
           skills.map((skill, index) => {
             if (index < skills.length - 1) {
               return <span> {skill.value},&nbsp; </span>;
             } else {
               return <span>{skill.value} </span>;
             }
-          })}
+          })
+        :
+        "No skills added yet"}
       </div>
     </div>
   );

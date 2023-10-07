@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ProjectCard from "../Card/ProjectCard";
+import ProjectCard from "@/components/shared/Card/ProjectCard";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const ProjectList = () => {
