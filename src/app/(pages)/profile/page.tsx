@@ -3,7 +3,8 @@ import Image from "next/image";
 import ProfileCard from "@/components/Pages/Profile/ProfileCard";
 import ProfileReadme from "@/components/Pages/Profile/ProfileReadme";
 import AboutCard from "@/components/Pages/Profile/AboutCard";
-import ProjectList from "@/components/shared/List/ProjectList";
+import ProjectList from "@/components/Pages/Profile/ProjectList";
+
 const page = () => {
   return (
     <div>
