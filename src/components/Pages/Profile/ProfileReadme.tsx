@@ -1,9 +1,10 @@
 "use client";
+import { useAuthContext } from "@/app/AuthContext";
 import { useGlobalContext } from "@/app/GlobalContext";
 
 const ProfileReadme = () => {
-  const { userDetails } = useGlobalContext();
-  const { username } = userDetails;
+  const { currentUser } = useAuthContext();
+  const { username } = currentUser;
   return (
     <div className="border-2 p-4 rounded-lg min-w-[50%] min-h-[10vh]">
       <div className="text-sm font-extralight font-mono">

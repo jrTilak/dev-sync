@@ -6,21 +6,23 @@ import { GoMail } from "react-icons/go";
 import { RiGroupLine } from "react-icons/ri";
 import Link from "next/link";
 import placeholderPhoto from "/public/assets/img/placeholder.jpg";
+import { useAuthContext } from "@/app/AuthContext";
 
 const ProfileCard = ({ isMyProfile }) => {
-  const { userDetails } = useGlobalContext();
-  const { name, username, photoUrl, bio, followers, following, email, skills } =
-    userDetails;
+  const { currentUser } = useAuthContext();
+  
+  const { displayName, username, photoURL, bio, followers, following, email, skills } =
+    currentUser;
   return (
     <div className=" max-w-[310px] p-4 flex flex-col gap-2">
       <Image
         className="w-56 h-56 rounded-full"
-        src={photoUrl || placeholderPhoto}
+        src={photoURL || placeholderPhoto}
         alt="Rounded avatar"
         width={500}
         height={500}
       />
-      <h1 className="font-semibold text-2xl">{name || "Your Name"}</h1>
+      <h1 className="font-semibold text-2xl">{displayName || "Your Name"}</h1>
       <h3 className="font-light">@{username || "username"}</h3>
       <p className="max-w-xs">{bio}</p>
       {isMyProfile ? (
