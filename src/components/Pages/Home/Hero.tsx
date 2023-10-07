@@ -27,7 +27,8 @@ const Hero = () => {
                       <p className="text-3xl sm:text-4xl">👋</p>
                       <blockquote className="ml-5">
                         <p className="text-sm font-medium text-white sm:text-lg">
-                          “I yesma programming quotes dekhanun e'
+                          Don't worry about being a great programmer;
+                          Just be a good programmer with great habits!
                         </p>
                       </blockquote>
                     </div>
@@ -45,8 +46,11 @@ const Hero = () => {
                   Open Source <br /> Countribution.
                 </h2>
                 <p className=" text-gray-900 my-4">
-                  Velit officia conse duis enim velit mollit. Exercit ation
-                  veniam consequat sunt nostrud amet.
+                  Let's collab, innovate and improve ourselves!We focus on creating a friendly atmosphere to
+                  bring people with diverse innovative ideas and skills brainstorm together to contribute for
+                  better community growth.... 
+    
+          
                 </p>
               </div>
               <div className="flex gap-4">
