@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useAuthContext } from "@/app/AuthContext";
+import skills from "./skills.json";
 
 const Create = () => {
   const router = useRouter();
@@ -111,6 +112,41 @@ const Create = () => {
       label: "Beginner",
     },
   ];
+  const type = [
+    {
+      value: "Open Science Project",
+      label: "Open Science Project",
+    },
+    {
+      value: "Open Source Project",
+      label: "Open Source Project",
+    },
+  ];
+  const postType = [
+    {
+      value: "Project",
+      label: "Project",
+    },
+    {
+      value: "Project Idea",
+      label: "Project Idea",
+    },
+    {
+      value: "Research Paper",
+      label: "Research Paper",
+    },
+  ];
+
+  const visiblity = [
+    {
+      value: "Public",
+      label: "Public",
+    },
+    {
+      value: "Private",
+      label: "Private",
+    },
+  ];
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -140,6 +176,18 @@ const Create = () => {
       skillsNeeded: e,
     }));
   };
+  const onVisiblityChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      visiblity: e,
+    }));
+  };
+  const onPostTypeChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      postType: e,
+    }));
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -152,46 +200,66 @@ const Create = () => {
   return (
     <>
       <div className="heading text-center font-bold text-2xl m-5 text-gray-800">
-        Create a new Project
+        Create New
       </div>
       <div className="editor flex flex-col gap-4 mx-auto w-10/12  text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
         <input
           onChange={handleFormChange}
           className="title bg-gray-100 border border-gray-300 p-2 outline-none"
-          spellcheck="false"
+          spellCheck="false"
           placeholder="Title"
           type="text"
           name="title"
         />
+        <div>
+          <div>
+            <label
+              htmlFor="postType"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Post Type
+            </label>
+            <Select
+              components={animatedComponents}
+              options={postType}
+              name="postType"
+              onChange={onPostTypeChange}
+              id="postType"
+              value={formData.postType || ""}
+              className="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
         <input
           onChange={handleFormChange}
           className="title bg-gray-100 border border-gray-300 p-2 outline-none"
-          spellcheck="false"
+          spellCheck="false"
           placeholder="URL of repo or source..."
           type="text"
           name="sourceLink"
+          autoComplete="off"
+          value={formData.sourceLink || ""}
         />
         <textarea
           onChange={handleFormChange}
           className="metaDescription bg-gray-100 sec p-3 h-30 border border-gray-300 outline-none"
-          spellcheck="false"
+          spellCheck="false"
           placeholder="Short summary..."
           name="metaDesc"
         ></textarea>
         <div>
           <label
-            htmlFor="interests"
+            htmlFor="level"
             className="mb-3 block text-base font-medium text-[#07074D]"
           >
             Level
           </label>
           <Select
-            closeMenuOnSelect={false}
             components={animatedComponents}
             options={difficulty}
             name="level"
             onChange={onLevelChange}
-            id="interests"
+            id="level"
             value={formData.level || ""}
             className="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -204,9 +272,8 @@ const Create = () => {
             Type
           </label>
           <Select
-            closeMenuOnSelect={false}
             components={animatedComponents}
-            options={difficulty}
+            options={type}
             name="level"
             onChange={onTypeChange}
             id="interests"
@@ -216,7 +283,7 @@ const Create = () => {
         </div>
         <div>
           <label
-            htmlFor="interests"
+            htmlFor="skillesNeeded"
             className="mb-3 block text-base font-medium text-[#07074D]"
           >
             Skills
@@ -225,10 +292,10 @@ const Create = () => {
             closeMenuOnSelect={false}
             components={animatedComponents}
             isMulti
-            options={difficulty}
+            options={skills}
             name="skillesNeeded"
             onChange={onSkillsNeededChange}
-            id="interests"
+            id="skillesNeeded"
             value={formData.skillsNeeded || ""}
             className="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -236,10 +303,27 @@ const Create = () => {
         <textarea
           onChange={handleFormChange}
           className="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"
-          spellcheck="false"
+          spellCheck="false"
           placeholder="Description..."
           name="description"
         ></textarea>
+        <div>
+          <label
+            htmlFor="visiblity"
+            className="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Visiblity
+          </label>
+          <Select
+            components={animatedComponents}
+            options={visiblity}
+            name="visiblity"
+            onChange={onVisiblityChange}
+            id="visiblity"
+            value={formData.visiblity || ""}
+            className="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
         <div className="icons flex text-gray-500 m-2">
           <input
             type="file"
@@ -255,6 +339,7 @@ const Create = () => {
             0/300
           </div>
         </div>
+        <div></div>
         <div className="buttons flex">
           <div className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto">
             Cancel
