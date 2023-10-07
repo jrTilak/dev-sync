@@ -21,7 +21,6 @@ export const AuthContextProvider = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       console.log("user", user);
 
-      setCurrentUser(user || {});
       if (user) {
         setIsUserLoggedIn(true);
       }
