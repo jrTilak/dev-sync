@@ -6,9 +6,9 @@ const page = () => {
         <>
         <Search/>
         <ProjectList/>
-        <ProjectList/>
-        <ProjectList/>
-        <ProjectList/>
+     
+     
+        
         </> 
     )
 }
