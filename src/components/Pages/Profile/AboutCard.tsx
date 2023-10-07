@@ -1,9 +1,9 @@
 "use client";
-import { useGlobalContext } from "@/app/GlobalContext";
+import { useAuthContext } from "@/app/AuthContext";
 
 const AboutCard = () => {
-  const { userDetails } = useGlobalContext();
-  const { username } = userDetails;
+  const { currentUser } = useAuthContext();
+  const { username } = currentUser;
   return (
     <div className="min-h-[10vh] border-2 p-4 rounded-lg max-w-[46rem]">
       <div className="text-sm font-extralight font-mono">
@@ -11,7 +11,7 @@ const AboutCard = () => {
       </div>
       <hr />
       <div className="mt-4">
-      {userDetails.about || "Nothing to show here, yet!"}
+      {currentUser.about || "Nothing to show here, yet!"}
 
       </div>
     </div>
