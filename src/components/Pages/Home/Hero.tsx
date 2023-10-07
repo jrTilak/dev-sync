@@ -21,13 +21,14 @@ const Hero = () => {
                 />
               </div>
               <div className="absolute left-0 pr-12 bottom-8 xl:bottom-20">
-                <div className="max-w-xs bg-blue-600 rounded-lg sm:max-w-md xl:max-w-md">
+                <div className="max-w-xs bg-green-400 rounded-lg sm:max-w-md xl:max-w-md">
                   <div className="px-3 py-4 sm:px-5 sm:py-8">
                     <div className="flex items-start">
                       <p className="text-3xl sm:text-4xl">👋</p>
                       <blockquote className="ml-5">
-                        <p className="text-sm font-medium text-white sm:text-lg">
-                          “I yesma programming quotes dekhanun e'
+                        <p className="text-sm font-medium text-black sm:text-lg">
+                          Don't worry about being a great programmer;
+                          Just be a good programmer with great habits!
                         </p>
                       </blockquote>
                     </div>
@@ -45,8 +46,11 @@ const Hero = () => {
                   Open Source <br /> Countribution.
                 </h2>
                 <p className=" text-gray-900 my-4">
-                  Velit officia conse duis enim velit mollit. Exercit ation
-                  veniam consequat sunt nostrud amet.
+                  Let's collab, innovate and improve ourselves!We focus on creating a friendly atmosphere to
+                  bring people with diverse innovative ideas and skills brainstorm together to contribute for
+                  better community growth.... 
+    
+          
                 </p>
               </div>
               <div className="flex gap-4">

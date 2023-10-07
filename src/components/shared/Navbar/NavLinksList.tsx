@@ -9,6 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaDiagramProject } from "react-icons/fa6";
 import { DiCodeigniter } from "react-icons/di";
 import { NavLinks } from "./@types";
+import { MdNotificationsActive } from "react-icons/md";
 
 // classname for link icon
 const linkIconClassName: String =
@@ -34,6 +35,12 @@ export const navLinks: NavLinks[] = [
       type: "text",
       content: "new",
     },
+  },
+  {
+    name: "Notifications",
+    href: "/notifications",
+    linkIcon: <MdNotificationsActive className={linkIconClassName} />,
+    
   },
   {
     name: "Projects",
