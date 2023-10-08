@@ -1,6 +1,6 @@
 "use client"
 import { useAuthContext } from "@/app/AuthContext";
-import Create from "@/components/CreateProjects/Projects/Create";
+import Create from "./Create";
 
 const CreateProject = () => {
   const {isUserLoggedIn} = useAuthContext();

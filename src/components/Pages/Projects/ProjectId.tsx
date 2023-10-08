@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
-import Rating from "@/components/ProjectIds/Projects/Rating";
+import Rating from "./Rating";
 const ProjectId = () => {
   const pathname = usePathname();
   const projectID = pathname.split("/")[2];
