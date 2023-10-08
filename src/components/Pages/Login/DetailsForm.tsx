@@ -6,23 +6,24 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import skills from "./skills.json";
+import { useAuthContext } from "@/app/AuthContext";
 
 const DetailsForm = () => {
-  const { userDetails } = useGlobalContext();
+  const { currentUser } = useAuthContext();
   const [isUpdating, setIsUpdating] = useState(false);
-  const [formData, setFormData] = useState(userDetails);
+  const [formData, setFormData] = useState(currentUser);
   const animatedComponents = makeAnimated();
   useEffect(() => {
-    setFormData(userDetails);
-  }, [userDetails]);
+    setFormData(currentUser);
+  }, [currentUser]);
 
-  const handleFormChange = (e) => {
-    setFormData((prev) => ({
+  const handleFormChange = (e:any) => {
+    setFormData((prev :any) => ({
       ...prev,
       ...{ [e.target.name]: e.target.value },
     }));
   };
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e:any) => {
     e.preventDefault();
     setIsUpdating(true);
     let data = JSON.stringify(formData);
@@ -47,14 +48,14 @@ const DetailsForm = () => {
       });
   };
 
-  const onSkillsChange = (e) => {
-    setFormData((prev) => ({
+  const onSkillsChange = (e:any) => {
+    setFormData((prev:any) => ({
       ...prev,
       ...{ skills: e },
     }));
   };
-  const onInterestsChange = (e) => {
-    setFormData((prev) => ({
+  const onInterestsChange = (e:any) => {
+    setFormData((prev:any) => ({
       ...prev,
       ...{ interests: e },
     }));
@@ -90,7 +91,7 @@ const DetailsForm = () => {
                 >
                   Username
                 </label>
-                {userDetails.loginMethod === "github" ? (
+                {currentUser.loginMethod === "github" ? (
                   <input
                     onChange={handleFormChange}
                     type="text"

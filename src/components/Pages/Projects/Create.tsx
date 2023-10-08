@@ -18,18 +18,21 @@ const Create = () => {
   const [imgInFirebaseUrl, setImgInFirebaseUrl] = useState("");
   const [isUploading, setIsUploading] = useState(false); // Track upload completion
   const animatedComponents = makeAnimated();
-  const { currentUser } = useAuthContext();
+  const { currentUser, isUserLoggedIn } = useAuthContext();
   const [formData, setFormData] = useState({
     description: "",
     img: "",
     level: {},
     metaDesc: "",
-    owner: currentUser.uid,
+    owner: isUserLoggedIn && currentUser.uid,
     skillsNeeded: [],
     sourceLink: "",
     type: "",
     title: "",
     date: getCurrentDateString(),
+    visiblity: {},
+    postType: {},
+    
   });
 
   const createProject = async () => {
@@ -72,7 +75,9 @@ const Create = () => {
       );
 
       try {
-        await uploadBytes(imgRef, imgUrl);
+        const response = await fetch(imgUrl);
+        const blob = await response.blob();
+        await uploadBytes(imgRef, blob);
         // Get the download URL for the uploaded image
         await getDownloadURL(imgRef).then((url) => {
           console.log("url", url);
@@ -86,7 +91,7 @@ const Create = () => {
         });
         // console.log(downloadURL);
         // console.log("Uploaded a blob or file!", downloadURL);
-      } catch (e) {
+      } catch (e:any) {
         console.error(e);
       }
     }
@@ -149,7 +154,7 @@ const Create = () => {
     },
   ];
 
-  const handleFormChange = (e) => {
+  const handleFormChange = (e:any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -157,33 +162,33 @@ const Create = () => {
     }));
   };
 
-  const onLevelChange = (e) => {
+  const onLevelChange = (e:any) => {
     setFormData((prevData) => ({
       ...prevData,
       level: e,
     }));
   };
 
-  const onTypeChange = (e) => {
+  const onTypeChange = (e:any) => {
     setFormData((prevData) => ({
       ...prevData,
       type: e,
     }));
   };
 
-  const onSkillsNeededChange = (e) => {
+  const onSkillsNeededChange = (e:any) => {
     setFormData((prevData) => ({
       ...prevData,
       skillsNeeded: e,
     }));
   };
-  const onVisiblityChange = (e) => {
+  const onVisiblityChange = (e:any) => {
     setFormData((prevData) => ({
       ...prevData,
       visiblity: e,
     }));
   };
-  const onPostTypeChange = (e) => {
+  const onPostTypeChange = (e:any) => {
     setFormData((prevData) => ({
       ...prevData,
       postType: e,
@@ -191,37 +196,22 @@ const Create = () => {
   };
   const [uploadCount, setUploadCount] = useState(0); // Track upload count
   useEffect(() => {
-    if (uploadCount % 2 === 1) {
-      toast.error("Image Upload failed!, Submit Once Again", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    } else {
-      toast.success("Login Successful! 🔥", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "light",
-      });
-    }
+    toast.success("Login Successful! 🔥", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+    });
   }, [uploadCount]);
-  
-  const handleFormSubmit = async (e) => {
+
+  const handleFormSubmit = async (e:any) => {
     e.preventDefault();
     setIsUploading(true);
     await createProject();
     setIsUploading(false);
-    setUploadCount((prev) => prev + 1);
-    console.log(formData);
   };
 
   return (
@@ -301,9 +291,9 @@ const Create = () => {
           <Select
             components={animatedComponents}
             options={type}
-            name="level"
+            name="type"
             onChange={onTypeChange}
-            id="interests"
+            id="type"
             value={formData.type || ""}
             className="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
@@ -355,7 +345,7 @@ const Create = () => {
           <input
             type="file"
             name="file"
-            onChange={(e) => {
+            onChange={(e:any) => {
               setImgUrl(e.target.files[0]);
             }}
             accept="image/*"

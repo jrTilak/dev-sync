@@ -1,6 +1,18 @@
 import React from "react";
 
-const SentMessage = ({ avatar, message, isSeen, sender }) => {
+interface SentMessageProps {
+  avatar: React.ReactNode;
+  message: string;
+  isSeen: boolean;
+  sender: string;
+}
+const SentMessage: React.FC<SentMessageProps> = ({
+  avatar,
+  message,
+  isSeen,
+  sender,
+}) => {
+  
   return (
     <>
       <div className="w-[90%]">

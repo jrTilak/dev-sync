@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 import ProjectCard from "../Card/ProjectCard";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-const ProjectList = ({title, limit, type}) => {
+interface ProjectListProps {
+  title: string;
+  limit: number;
+  type: string;
+}
+const ProjectList: React.FC<ProjectListProps> = ({ title, limit, type }) => {
   //todo add next and prev button bu paq and avoid cumulatve layout shift
   const [projects, setProjects] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
@@ -104,7 +109,7 @@ const ProjectList = ({title, limit, type}) => {
           </>
         ) : (
           <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3  lg:max-w-full">
-            {projects.map((project, index) => (
+            {projects.map((project:any, index) => (
               <ProjectCard
                 key={index}
                 title={project.title}

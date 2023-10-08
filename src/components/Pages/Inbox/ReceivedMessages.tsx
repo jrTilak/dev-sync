@@ -1,6 +1,14 @@
 import React from "react";
-
-const ReceivedMessages = ({ message, avatar,sender }) => {
+interface ReceivedMessagesProps {
+  message: string;
+  avatar: React.ReactNode;
+  sender: string;
+}
+const ReceivedMessages: React.FC<ReceivedMessagesProps> = ({
+  message,
+  avatar,
+  sender,
+}) => {
   return (
     <>
       <div className="w-[90%]">

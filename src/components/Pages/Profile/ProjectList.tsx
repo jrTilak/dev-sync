@@ -105,15 +105,14 @@ const ProjectList = () => {
           </>
         ) : (
           <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
-            {projects.map((project) => (
+            {projects.map((project:any, index:number) => (
               <ProjectCard
-                key={project.id}
+                key={index}
                 title={project.title}
                 metaDesc={project.metaDesc}
                 level={project.level}
                 projectId={project.id}
                 img={project.img}
-                key={project.id}
                 skillsNeeded={project.skillsNeeded}
               />
             ))}

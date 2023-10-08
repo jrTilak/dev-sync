@@ -13,7 +13,15 @@ import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/app/AuthContext";
 // import { useRouter } from "next/navigation";
 
-const GoogleLoginButton = ({ isloggingIn, setIsLoggingIn }) => {
+interface GoogleLoginButtonProps {
+  isloggingIn: boolean;
+  setIsLoggingIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
+  isloggingIn,
+  setIsLoggingIn,
+}) => {
   const router = useRouter();
   const { setUserDetails, app } = useGlobalContext();
   const { setIsUserLoggedIn, setCurrentUser } = useAuthContext();

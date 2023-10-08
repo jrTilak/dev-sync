@@ -8,7 +8,10 @@ import Link from "next/link";
 import placeholderPhoto from "/public/assets/img/placeholder.jpg";
 import { useAuthContext } from "@/app/AuthContext";
 
-const ProfileCard = ({ isMyProfile }) => {
+interface ProfileCardProps {
+  isMyProfile: boolean;
+}
+const ProfileCard: React.FC<ProfileCardProps> = ({ isMyProfile }) => {
   const { currentUser } = useAuthContext();
   
   const { displayName, username, photoURL, bio, followers, following, email, skills } =
@@ -57,7 +60,7 @@ const ProfileCard = ({ isMyProfile }) => {
       <div className="flex flex-wrap">
         <h1 className="font-bold">Skills:&nbsp; </h1>
         {skills ?
-          skills.map((skill, index) => {
+          skills.map((skill:any, index:number) => {
             if (index < skills.length - 1) {
               return <span> {skill.value},&nbsp; </span>;
             } else {

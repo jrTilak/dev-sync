@@ -12,7 +12,15 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useAuthContext } from "@/app/AuthContext";
 
-const GithubLoginButton = ({ isloggingIn, setIsLoggingIn }) => {
+interface GithubLoginButtonProps {
+  isloggingIn: boolean;
+  setIsLoggingIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const GithubLoginButton: React.FC<GithubLoginButtonProps> = ({
+  isloggingIn,
+  setIsLoggingIn,
+}) => {
   const { setUserDetails, app } = useGlobalContext();
   const { setIsUserLoggedIn, setCurrentUser } = useAuthContext();
   const router = useRouter();

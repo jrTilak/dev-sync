@@ -1,7 +1,18 @@
 import React from "react";
 import SingleChat from "./SingleChat";
 
-const ChatList = ({ chatHistory }) => {
+interface ChatListProps {
+  chatHistory: {
+    unreadCount: number;
+    chats: {
+      uid: string;
+      avatar: string;
+      name: string;
+      unreadCount: number;
+    }[];
+  };
+}
+const ChatList: React.FC<ChatListProps> = ({ chatHistory }) => {
   return (
     <>
       <div className="flex flex-col mt-8">

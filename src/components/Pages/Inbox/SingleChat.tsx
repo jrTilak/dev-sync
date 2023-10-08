@@ -14,7 +14,20 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const SingleChat = ({ avatar, name, userUid, unreadCount }) => {
+
+interface SingleChatProps {
+  avatar: React.ReactNode;
+  name: string;
+  userUid: string;
+  unreadCount: number;
+}
+const SingleChat: React.FC<SingleChatProps> = ({
+  avatar,
+  name,
+  userUid,
+  unreadCount,
+}) => {
+  
   const router = useRouter();
   const { app } = useGlobalContext();
   const [user, setUser] = useState(null);
