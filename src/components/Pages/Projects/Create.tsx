@@ -9,6 +9,7 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useAuthContext } from "@/app/AuthContext";
 import skills from "./skills.json";
+import { toast } from "react-toastify";
 
 const Create = () => {
   const router = useRouter();
@@ -188,12 +189,38 @@ const Create = () => {
       postType: e,
     }));
   };
-
+  const [uploadCount, setUploadCount] = useState(0); // Track upload count
+  useEffect(() => {
+    if (uploadCount % 2 === 1) {
+      toast.error("Image Upload failed!, Submit Once Again", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.success("Login Successful! 🔥", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+    }
+  }, [uploadCount]);
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsUploading(true);
     await createProject();
     setIsUploading(false);
+    setUploadCount((prev) => prev + 1);
     console.log(formData);
   };
 

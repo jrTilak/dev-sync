@@ -15,18 +15,18 @@ const Inbox = () => {
   const { app, userDetails } = useGlobalContext();
   const { isUserLoggedIn } = useAuthContext();
   const db = getFirestore(app);
-  const startChat = async () => {
-    try {
-      await setDoc(doc(db, "userChats", userDetails.uid), {});
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-    if (isUserLoggedIn) {
-      startChat();
-    }
-  }, []);
+  // const startChat = async () => {
+  //   try {
+  //     await setDoc(doc(db, "userChats", userDetails.uid), {});
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (isUserLoggedIn) {
+  //     startChat();
+  //   }
+  // }, []);
 
   const chatHistory = {
     unreadCount: 2,

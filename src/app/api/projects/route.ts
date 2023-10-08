@@ -33,7 +33,7 @@ export async function GET(req: Request) {
   const notParsedfilter = req.headers.get("filter");
   const limit = req.headers.get("limit");
   const page = req.headers.get("page");
-  let returnData;
+  const type = req.headers.get("type");
 
   try {
     if (projectId) {
@@ -112,6 +112,23 @@ export async function GET(req: Request) {
         // Remove the matchCount property from the final result if needed
         filteredData = filteredData.map(({ matchCount, ...rest }) => rest);
       }
+
+      if (type?.toLowerCase() === "open science project") {
+        filteredData = filteredData.filter(
+          (project) => project.type.value === "Open Science Project"
+        );
+      } else if (type?.toLowerCase() === "open source project") {
+        filteredData = filteredData.filter(
+          (project) => project.type.value === "Open Source Project"
+        );
+      }
+
+      // shuffle the array
+      for (let i = filteredData.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredData[i], filteredData[j]] = [filteredData[j], filteredData[i]];
+      }
+
       if (limit) {
         return Response.json(filteredData.slice(0, Number(limit)));
       }
@@ -123,13 +140,35 @@ export async function GET(req: Request) {
           )
         );
       }
-
+      // if (type?.toLowerCase() === "open science project") {
+      //   filteredData = filteredData.filter(
+      //     (project) => project.type.value === "Open Science Project"
+      //   );
+      // } else if (type?.toLowerCase() === "open source project") {
+      //   filteredData = filteredData.filter(
+      //     (project) => project.type.value === "Open Source Project"
+      //   );
+      // }
       return Response.json(filteredData);
     } else {
       const projectsRef = collection(db, "projects");
       const projectsQuery = await getDocs(projectsRef);
-      const projects = projectsQuery.docs.map((doc) => doc.data());
 
+      let projects = projectsQuery.docs.map((doc) => doc.data());
+      if (type?.toLowerCase() === "open science project") {
+        projects = projects.filter(
+          (project) => project.type.value === "Open Science Project"
+        );
+      } else if (type?.toLowerCase() === "open source project") {
+        projects = projects.filter(
+          (project) => project.type.value === "Open Source Project"
+        );
+      }
+      // shuffle the array
+      for (let i = projects.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [projects[i], projects[j]] = [projects[j], projects[i]];
+      }
       if (limit) {
         return Response.json(projects.slice(0, Number(limit)));
       }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ProjectCard from "../Card/ProjectCard";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-const ProjectList = () => {
+const ProjectList = ({title, limit, type}) => {
   //todo add next and prev button bu paq and avoid cumulatve layout shift
   const [projects, setProjects] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
@@ -16,8 +16,10 @@ const ProjectList = () => {
         method: "get",
         url: "http://localhost:3000/api/projects",
         headers: {
-          limit: "3",
+          limit: limit.toString(),
           page: projectPage.toString(),
+          type: type.toString(),
+          
         },
       })
       .then((res) => {
@@ -39,11 +41,8 @@ const ProjectList = () => {
         <div className="flex items-end justify-between">
           <div className="flex-1 text-center lg:text-left">
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-              The Project based on Your  Skill:
+              {title}
             </h2>
-            <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 lg:mx-0">
-             
-            </p>
           </div>
 
           <div className="hidden lg:flex lg:items-center lg:space-x-3">
@@ -104,18 +103,16 @@ const ProjectList = () => {
             </div>
           </>
         ) : (
-          <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
-            {projects.map((project) => (
+          <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3  lg:max-w-full">
+            {projects.map((project, index) => (
               <ProjectCard
-                key={project.id}
+                key={index}
                 title={project.title}
                 metaDesc={project.metaDesc}
-                tech={project.tech}
                 level={project.level}
                 projectId={project.id}
+                skillsNeeded={project.skillsNeeded}
                 img={project.img}
-                key={project.id}
-                sourceLink={project.sourceLink}
               />
             ))}
           </div>

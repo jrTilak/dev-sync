@@ -19,72 +19,74 @@ const SingleChat = ({ avatar, name, userUid, unreadCount }) => {
   const { app } = useGlobalContext();
   const [user, setUser] = useState(null);
   const { currentUser } = useAuthContext();
-  let config = {
-    method: "get",
-    url: "http://localhost:3000/api/users",
-    headers: {
-      uid: userUid,
-    },
-  };
+  // let config = {
+  //   method: "get",
+  //   url: "http://localhost:3000/api/users",
+  //   headers: {
+  //     uid: userUid,
+  //   },
+  // };
 
-  axios
-    .request(config)
-    .then((response) => {
-      setUser(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  // axios
+  //   .request(config)
+  //   .then((response) => {
+  //     setUser(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
 
-  const db = getFirestore(app);
-  const handleSelect = async () => {
-    //check whether the group(chats in firestore) exists, if not create
-    const combinedId =
-      currentUser.uid > user.uid
-        ? currentUser.uid + user.uid
-        : user.uid + currentUser.uid;
-    try {
-      const res = await getDoc(doc(db, " ", combinedId));
-      console.log(combinedId);
-      console.log(res);
+  // const db = getFirestore(app);
+  // const handleSelect = async () => {
+  //   //check whether the group(chats in firestore) exists, if not create
+  //   const combinedId =
+  //     currentUser.uid > user.uid
+  //       ? currentUser.uid + user.uid
+  //       : user.uid + currentUser.uid;
+  //   try {
+  //     const res = await getDoc(doc(db, " ", combinedId));
+  //     console.log(combinedId);
+  //     console.log(res);
 
-      if (!res.exists()) {
-        console.log("not exists");
+  //     if (!res.exists()) {
+  //       console.log("not exists");
 
-        //create a chat in chats collection
-        await setDoc(doc(db, "chats", combinedId), { messages: [] });
+  //       //create a chat in chats collection
+  //       await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
-        //create user chats
-        await updateDoc(doc(db, "userChats", currentUser.uid), {
-          [combinedId + ".userInfo"]: {
-            uid: user.uid,
-            displayName: user.displayName,
-            photoURL: user.photoUrl,
-          },
-          [combinedId + ".date"]: serverTimestamp(),
-        });
+  //       //create user chats
+  //       await updateDoc(doc(db, "userChats", currentUser.uid), {
+  //         [combinedId + ".userInfo"]: {
+  //           uid: user.uid,
+  //           displayName: user.displayName,
+  //           photoURL: user.photoUrl,
+  //         },
+  //         [combinedId + ".date"]: serverTimestamp(),
+  //       });
 
-        await updateDoc(doc(db, "userChats", user.uid), {
-          [combinedId + ".userInfo"]: {
-            uid: currentUser.uid,
-            displayName: currentUser.displayName,
-            photoURL: currentUser.photoUrl,
-          },
-          [combinedId + ".date"]: serverTimestamp(),
-        });
-      }
-      console.log(user.uid);
+  //       await updateDoc(doc(db, "userChats", user.uid), {
+  //         [combinedId + ".userInfo"]: {
+  //           uid: currentUser.uid,
+  //           displayName: currentUser.displayName,
+  //           photoURL: currentUser.photoUrl,
+  //         },
+  //         [combinedId + ".date"]: serverTimestamp(),
+  //       });
+  //     }
+  //     console.log(user.uid);
 
-      router.push(`/inbox/${combinedId}`);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //     router.push(`/inbox/${combinedId}`);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <>
       <button
-        onClick={handleSelect}
+        onClick={()=>{
+          router.push(`/inbox/someone`)
+        }}
         className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2"
       >
         <div className="flex items-center justify-center h-8 w-8 bg-gray-200 rounded-full">

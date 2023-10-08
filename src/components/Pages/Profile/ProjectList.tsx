@@ -110,12 +110,11 @@ const ProjectList = () => {
                 key={project.id}
                 title={project.title}
                 metaDesc={project.metaDesc}
-                tech={project.tech}
                 level={project.level}
                 projectId={project.id}
                 img={project.img}
                 key={project.id}
-                sourceLink={project.sourceLink}
+                skillsNeeded={project.skillsNeeded}
               />
             ))}
           </div>

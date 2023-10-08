@@ -43,17 +43,8 @@ export const navLinks: NavLinks[] = [
     
   },
   {
-    name: "Projects",
-    href: "/projects",
-    linkIcon: <FaDiagramProject className={linkIconClassName} />,
-    tag: {
-      type: "text",
-      content: "9+",
-    },
-  },
-  {
     name: "Search",
-    href: "/search",
+    href: "/explore",
     linkIcon: <LuSearchCode className={linkIconClassName} />,
   },
   {
@@ -65,11 +56,6 @@ export const navLinks: NavLinks[] = [
     name: "Profile",
     href: "/profile",
     linkIcon: <CgProfile className={linkIconClassName} />,
-  },
-  {
-    name: "Links",
-    href: "/links",
-    linkIcon: <TbExternalLink className={linkIconClassName} />,
   },
   {
     name: "Contact",

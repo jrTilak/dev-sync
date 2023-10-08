@@ -5,10 +5,9 @@ const page = () => {
     return (
         <>
         <Search/>
-        <ProjectList/>
-     
-     
-        
+        <ProjectList title="Based on your skills:" type="open source project" limit={3}/>        
+        <ProjectList title="Based on your interests:" type="open source project" limit={3}/>        
+        <ProjectList title="More:" type="open science project" limit={3}/>        
         </> 
     )
 }

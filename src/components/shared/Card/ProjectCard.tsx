@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const ProjectCard = ({ level, projectId, tech, title, metaDesc, img }) => {
+const ProjectCard = ({ level, projectId, skillsNeeded,title, metaDesc, img }) => {
   return (
     <>
       <div className="overflow-hidden bg-white rounded shadow hover:scale-105 transition-all">
@@ -29,7 +29,12 @@ const ProjectCard = ({ level, projectId, tech, title, metaDesc, img }) => {
           </div>
           <div className="block mt-3 text-xs font-semibold tracking-widest text-gray-500 uppercase">
             {" "}
-            {/* {tech.value || ""}{" "} */}
+            {skillsNeeded.map((skill:{}, index:number) => (
+              <span key={index} className="mr-2">
+                {" "}
+                {skill.value}{" "}
+              </span>
+            ))}{" "}
           </div>
           <p className="mt-4 text-2xl font-semibold">
             <a href={`/projects/${projectId}`} title="" className="text-black">
