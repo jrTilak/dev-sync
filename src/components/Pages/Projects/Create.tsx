@@ -32,7 +32,6 @@ const Create = () => {
     date: getCurrentDateString(),
     visiblity: {},
     postType: {},
-    
   });
 
   const createProject = async () => {
@@ -91,7 +90,7 @@ const Create = () => {
         });
         // console.log(downloadURL);
         // console.log("Uploaded a blob or file!", downloadURL);
-      } catch (e:any) {
+      } catch (e: any) {
         console.error(e);
       }
     }
@@ -118,16 +117,19 @@ const Create = () => {
       label: "Beginner",
     },
   ];
-  const type = [
-    {
-      value: "Open Science Project",
-      label: "Open Science Project",
-    },
-    {
-      value: "Open Source Project",
-      label: "Open Source Project",
-    },
-  ];
+  const type = ["Open Science Project", "Open Source Project"];
+  // const type = [
+  //   {
+  //     value: "Open Science Project",
+  //     label: "Open Science Project",
+  //   },
+  //   {
+  //     value: "Open Source Project",
+  //     label: "Open Source Project",
+  //   },
+
+  // ];
+
   const postType = [
     {
       value: "Project",
@@ -154,7 +156,7 @@ const Create = () => {
     },
   ];
 
-  const handleFormChange = (e:any) => {
+  const handleFormChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -162,33 +164,33 @@ const Create = () => {
     }));
   };
 
-  const onLevelChange = (e:any) => {
+  const onLevelChange = (e: any) => {
     setFormData((prevData) => ({
       ...prevData,
       level: e,
     }));
   };
 
-  const onTypeChange = (e:any) => {
+  const onTypeChange = (e: any) => {
     setFormData((prevData) => ({
       ...prevData,
       type: e,
     }));
   };
 
-  const onSkillsNeededChange = (e:any) => {
+  const onSkillsNeededChange = (e: any) => {
     setFormData((prevData) => ({
       ...prevData,
       skillsNeeded: e,
     }));
   };
-  const onVisiblityChange = (e:any) => {
+  const onVisiblityChange = (e: any) => {
     setFormData((prevData) => ({
       ...prevData,
       visiblity: e,
     }));
   };
-  const onPostTypeChange = (e:any) => {
+  const onPostTypeChange = (e: any) => {
     setFormData((prevData) => ({
       ...prevData,
       postType: e,
@@ -207,7 +209,7 @@ const Create = () => {
     });
   }, [uploadCount]);
 
-  const handleFormSubmit = async (e:any) => {
+  const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     setIsUploading(true);
     await createProject();
@@ -345,7 +347,7 @@ const Create = () => {
           <input
             type="file"
             name="file"
-            onChange={(e:any) => {
+            onChange={(e: any) => {
               setImgUrl(e.target.files[0]);
             }}
             accept="image/*"
