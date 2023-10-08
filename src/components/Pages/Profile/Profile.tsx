@@ -5,7 +5,7 @@ import AboutCard from "@/components/Pages/Profile/AboutCard";
 import ProjectList from "@/components/shared/List/ProjectList";
 import { useAuthContext } from "@/app/AuthContext";
 
-const page = () => {
+const Profile = () => {
   const { isUserLoggedIn } = useAuthContext();
   return (
     <>
@@ -34,4 +34,4 @@ const page = () => {
     </>
   );
 };
-export default page;
+export default Profile;
