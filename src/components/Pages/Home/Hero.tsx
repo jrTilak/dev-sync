@@ -46,7 +46,7 @@ const Hero = () => {
                   Open Source <br /> Countribution.
                 </h2>
                 <p className=" text-gray-900 my-4">
-                  Let's collab, innovate and improve ourselves!We focus on creating a friendly atmosphere to
+                  Let&apos;s collab, innovate and improve ourselves!We focus on creating a friendly atmosphere to
                   bring people with diverse innovative ideas and skills brainstorm together to contribute for
                   better community growth.... 
     
