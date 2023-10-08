@@ -1,4 +1,5 @@
-import Profile from "@/components/Pages/Inbox/Profile"
+import Profile from "@/components/Pages/Profile/Profile"
+
 
 const page = () => {
   return (
