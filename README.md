@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevSync
 
-## Getting Started
+![DevSync](https://assets.spaceappschallenge.org/media/images/Create_Next_App_-_Google_Chrome_10_8_2023_2_3.width-1024.png)
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+DevSync is a web platform designed to simplify collaboration among open-source developers and project creators. It offers a range of features to streamline project discovery, communication, and contribution. Please note that while the core functionalities are operational, there may be certain areas that are still under development or undergoing improvements especially backend related functionalities.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **User Registration and Profile Creation:** Easily sign up using your GitHub or Google accounts, and create your profile by specifying your skills and interests.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Project Creation:** Project creators can effortlessly create project listings with essential details, such as project type, difficulty level, required skills, and a comprehensive project description.
 
-## Learn More
+- **Skill and Interest Matching:** Our platform match users with relevant projects based on their skills and interests.
 
-To learn more about Next.js, take a look at the following resources:
+- **Project Discovery:** The Explore page provides personalized project recommendations, making it easier to discover projects that align with your interests.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Collaboration Hub:** An integrated chat system allows project creators and contributors to communicate efficiently.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Project Visibility Control:** Project creators can set their projects as public or private, ensuring the right level of visibility and access.
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To use DevSync, simply visit [https://dev-sync-khaki.vercel.app/](https://dev-sync-khaki.vercel.app/) and follow the on-screen instructions to get started.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Known Issues
+
+Please be aware that, while we strive for a smooth user experience, DevSync is an ongoing project, and some functionalities may not work as expected. We are actively working to resolve these issues and improve the platform.
+
+If you encounter any issues or have suggestions for improvements, please open an issue in this repository or reach out to our support team.
+
+---
+
+Thank you!
