@@ -29,7 +29,7 @@ const DetailsForm = () => {
     let data = JSON.stringify(formData);
     let config = {
       method: "put",
-      url: "https://dev-sync-khaki.vercel.app//api/users",
+      url: "https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users",
       headers: {
         "Content-Type": "application/json",
       },

@@ -42,7 +42,7 @@ const GithubLoginButton: React.FC<GithubLoginButtonProps> = ({
       console.log(user);
 
       axios
-        .get("https://dev-sync-khaki.vercel.app//api/users", {
+        .get("https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users", {
           headers: {
             uid: user.uid,
           },
@@ -59,18 +59,21 @@ const GithubLoginButton: React.FC<GithubLoginButtonProps> = ({
                 console.log(githubData);
 
                 axios
-                  .post("https://dev-sync-khaki.vercel.app//api/users", {
-                    uid: user.uid,
-                    name: user.displayName || "",
-                    email: user.email || "",
-                    photoUrl: user.photoURL || "",
-                    githubToken: token,
-                    bio: githubData.data.bio || "",
-                    username: githubData.data.login,
-                    followers: githubData.data.followers,
-                    following: githubData.data.following,
-                    loginMethod: "github",
-                  })
+                  .post(
+                    "https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users",
+                    {
+                      uid: user.uid,
+                      name: user.displayName || "",
+                      email: user.email || "",
+                      photoUrl: user.photoURL || "",
+                      githubToken: token,
+                      bio: githubData.data.bio || "",
+                      username: githubData.data.login,
+                      followers: githubData.data.followers,
+                      following: githubData.data.following,
+                      loginMethod: "github",
+                    }
+                  )
                   .then((res) => {
                     setUserDetails((prev: any) => ({
                       ...prev,

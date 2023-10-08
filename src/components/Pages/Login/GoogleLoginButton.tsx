@@ -42,7 +42,7 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
         console.log(user);
 
         axios
-          .get("https://dev-sync-khaki.vercel.app//api/users", {
+          .get("https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users", {
             headers: {
               uid: user.uid,
             },
@@ -50,14 +50,17 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
           .then((res) => {
             if (res.data.status == 404) {
               axios
-                .post("https://dev-sync-khaki.vercel.app//api/users", {
-                  uid: user.uid,
-                  name: user.displayName,
-                  email: user.email,
-                  photoUrl: user.photoURL || "",
-                  googleToken: token,
-                  loginMethod: "google",
-                })
+                .post(
+                  "https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users",
+                  {
+                    uid: user.uid,
+                    name: user.displayName,
+                    email: user.email,
+                    photoUrl: user.photoURL || "",
+                    googleToken: token,
+                    loginMethod: "google",
+                  }
+                )
                 .then((res) => {
                   setUserDetails((prev: any) => ({
                     ...prev,

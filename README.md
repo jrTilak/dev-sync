@@ -22,7 +22,7 @@ DevSync is a web platform designed to simplify collaboration among open-source d
 
 ## Usage
 
-To use DevSync, simply visit [https://dev-sync-khaki.vercel.app/](https://dev-sync-khaki.vercel.app/) and follow the on-screen instructions to get started.
+To use DevSync, simply visit [https://dev-sync-idq59v1aa-jrtilak.vercel.app/](https://dev-sync-idq59v1aa-jrtilak.vercel.app/) and follow the on-screen instructions to get started.
 
 ## Known Issues
 

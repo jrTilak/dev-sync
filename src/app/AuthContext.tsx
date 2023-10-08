@@ -37,7 +37,7 @@ export const AuthContextProvider = ({ children }: any) => {
   if (isUserLoggedIn) {
     let config = {
       method: "get",
-      url: "https://dev-sync-khaki.vercel.app//api/users",
+      url: "https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/users",
       headers: {
         uid: currentUser.uid,
       },
