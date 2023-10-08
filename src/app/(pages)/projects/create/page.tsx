@@ -1,4 +1,5 @@
-import CreateProject from "@/components/Pages/Projects/CreateProject"
+import CreateProject from "../../../../components/Pages/Projects/Create"
+
 
 const page = () => {
   return (

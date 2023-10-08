@@ -36,11 +36,11 @@ export const navLinks: NavLinks[] = [
       content: "new",
     },
   },
-  {
-    name: "News Feed",
-    href: "/newsfeed",
-    linkIcon: <SiGooglenews className={linkIconClassName} />,
-  },
+  // {
+  //   name: "News Feed",
+  //   href: "/newsfeed",
+  //   linkIcon: <SiGooglenews className={linkIconClassName} />,
+  // },
   {
     name: "Notifications",
     href: "/notifications",
