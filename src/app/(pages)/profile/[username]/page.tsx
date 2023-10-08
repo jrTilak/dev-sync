@@ -14,7 +14,7 @@ const page = () => {
         </div>
       </div>
       <div>
-        <ProjectList />
+        <ProjectList title="Projects"  limit={3} type="open science project" />
       </div>
     </div>
   );

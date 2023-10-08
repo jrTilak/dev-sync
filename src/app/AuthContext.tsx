@@ -4,7 +4,14 @@ import { createContext, use, useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import app from "@/firebaseConfig";
 import axios from "axios";
-const Context = createContext();
+const Context = createContext<AuthContextType | undefined>(undefined);
+
+type AuthContextType = {
+  currentUser: any;
+  isUserLoggedIn: boolean;
+  setCurrentUser: React.Dispatch<React.SetStateAction<any>>;
+  setIsUserLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export const useAuthContext = () => {
   const context = use(Context);
@@ -14,13 +21,13 @@ export const useAuthContext = () => {
   return context;
 };
 const auth = getAuth(app);
-export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState({});
+export const AuthContextProvider = ({ children }: any) => {
+  const [currentUser, setCurrentUser] = useState({} as any);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
+      setCurrentUser(user as any);
       if (user) {
         setIsUserLoggedIn(true);
       }
@@ -38,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
   axios
     .request(config)
     .then((response) => {
-      setCurrentUser((prev) => ({ ...prev, ...response.data }));
+      setCurrentUser((prev : any) => ({ ...prev, ...response.data }));
     })
     .catch((error) => {
       console.log(error);

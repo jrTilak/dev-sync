@@ -20,7 +20,7 @@ const Contact = () => {
                   alt=""
                 />
 
-                <imgz
+                <img
                   className="hidden w-full translate-x-24 translate-y-8 md:block"
                   src="https://cdn.rareblocks.xyz/collection/celebration/images/contact/4/curve-line.svg"
                   alt=""

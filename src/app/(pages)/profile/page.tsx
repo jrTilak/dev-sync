@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
 import ProfileCard from "@/components/Pages/Profile/ProfileCard";
 import ProfileReadme from "@/components/Pages/Profile/ProfileReadme";
 import AboutCard from "@/components/Pages/Profile/AboutCard";
-import ProjectList from "@/components/Pages/Profile/ProjectList";
+import ProjectList from "@/components/shared/List/ProjectList";
 
 const page = () => {
   return (
@@ -16,7 +15,8 @@ const page = () => {
         </div>
       </div>
       <div>
-        <ProjectList />
+      <ProjectList title="Projects"  limit={3} type="open source project" />
+
       </div>
     </div>
   );

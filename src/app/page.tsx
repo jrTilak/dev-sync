@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <ProjectList title="Some Projects: " type="open source project" limit={3}/>
+      <ProjectList title="Open Source Projects:" type="open source project" limit={3}/>
       <ProjectList title="Open Science Projects: " type="open science project" limit={3} />
       <HowToContribute />
       <Contact />

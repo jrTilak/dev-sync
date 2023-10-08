@@ -13,13 +13,13 @@ const Search = () => {
                 </div>
                 <select id="pricingType" name="pricingType"
                     className=" h-10 border-2 border-black focus:outline-none focus:border-black text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                    <option value="All" selected="">All</option>
+                    <option value="All">All</option>
                     <option value="Openscience">Open Science Projects</option>
                     <option value="Opensource">Open Source Projects</option>
                 </select>
                 <select id="pricingType" name="pricingType"
                     className=" h-10 border-2 border-black focus:outline-none focus:border-black text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                    <option value="All" selected="">All</option>
+                    <option value="All">All</option>
                     <option value="beginner">Beginner</option>
                     <option value="Medium">Medium</option>
                     <option value="Expert">Expert</option>

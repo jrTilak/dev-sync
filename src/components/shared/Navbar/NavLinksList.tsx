@@ -2,7 +2,7 @@
 
 import { BiSolidMessageSquareDetail } from "react-icons/bi";
 import { BsFillChatLeftFill, BsPlusCircleFill } from "react-icons/bs";
-import { TbExternalLink } from "react-icons/tb";
+import { SiGooglenews } from "react-icons/si";
 import { LuSearchCode } from "react-icons/lu";
 import { AiFillHome } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
@@ -35,6 +35,11 @@ export const navLinks: NavLinks[] = [
       type: "text",
       content: "new",
     },
+  },
+  {
+    name: "News Feed",
+    href: "/newsfeed",
+    linkIcon: <SiGooglenews className={linkIconClassName} />,
   },
   {
     name: "Notifications",

@@ -57,12 +57,12 @@ const page = () => {
           <h1 className="text-4xl font-bold leadi md:text-5xl">Interdum et malesuada fames ac ante ipsum primis in faucibus?</h1>
           <p className="text-sm dark:text-gray-400">by
             <a rel="noopener noreferrer" href="#" target="_blank" className="underline dark:text-violet-400">
-              <span itemprop="name">Leroy Jenkins</span>
+              <span itemProp="name">Leroy Jenkins</span>
             </a>on
-            <time datetime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>
+            <time dateTime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>
           </p>
         </div>
-        <img sc="https://source.unsplash.com/1200x600/?portrait" alt="" className="object-cover w-full h-64 mx-auto rounded-lg shadow-lg" />
+        <img src="https://source.unsplash.com/1200x600/?portrait" alt="" className="object-cover w-full h-64 mx-auto rounded-lg shadow-lg" />
         <div className="dark:text-gray-100">
           <p>Insert the actual text content here...</p>
         </div>
