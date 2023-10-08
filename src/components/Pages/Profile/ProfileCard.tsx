@@ -62,9 +62,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ isMyProfile }) => {
         {skills ?
           skills.map((skill:any, index:number) => {
             if (index < skills.length - 1) {
-              return <span> {skill.value},&nbsp; </span>;
+              return <span key={index}>  {skill.value},&nbsp; </span>;
             } else {
-              return <span>{skill.value} </span>;
+              return <span key={index}>{skill.value} </span>;
             }
           })
         :

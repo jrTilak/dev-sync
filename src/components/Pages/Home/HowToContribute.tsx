@@ -72,7 +72,7 @@ const HowToContribute = () => {
                   Search for the project
                 </h3>
                 <p className="mt-4 text-base text-gray-600">
-                  We'll provide you the relatable project based on your search.
+                  We&apos;ll provide you the relatable project based on your search.
                 </p>
               </div>
             </li>
