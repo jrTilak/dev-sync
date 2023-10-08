@@ -34,22 +34,24 @@ export const AuthContextProvider = ({ children }: any) => {
     });
   }, []);
 
-  let config = {
-    method: "get",
-    url: "http://localhost:3000/api/users",
-    headers: {
-      uid: currentUser.uid,
-    },
-  };
+  if (isUserLoggedIn) {
+    let config = {
+      method: "get",
+      url: "http://localhost:3000/api/users",
+      headers: {
+        uid: currentUser.uid,
+      },
+    };
 
-  axios
-    .request(config)
-    .then((response) => {
-      setCurrentUser((prev : any) => ({ ...prev, ...response.data }));
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    axios
+      .request(config)
+      .then((response) => {
+        setCurrentUser((prev: any) => ({ ...prev, ...response.data }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   const authContextValue = {
     currentUser,
