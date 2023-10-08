@@ -42,7 +42,7 @@ const GithubLoginButton: React.FC<GithubLoginButtonProps> = ({
       console.log(user);
 
       axios
-        .get("http://localhost:3000/api/users", {
+        .get("https://dev-sync-khaki.vercel.app//api/users", {
           headers: {
             uid: user.uid,
           },
@@ -59,7 +59,7 @@ const GithubLoginButton: React.FC<GithubLoginButtonProps> = ({
                 console.log(githubData);
 
                 axios
-                  .post("http://localhost:3000/api/users", {
+                  .post("https://dev-sync-khaki.vercel.app//api/users", {
                     uid: user.uid,
                     name: user.displayName || "",
                     email: user.email || "",
