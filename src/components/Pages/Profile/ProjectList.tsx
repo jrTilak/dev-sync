@@ -14,7 +14,7 @@ const ProjectList = () => {
     axios
       .request({
         method: "get",
-        url: "http://localhost:3000/api/projects",
+        url: "http://devsync.jrtilak.me/api/projects",
         headers: {
           limit: "3",
           page: projectPage.toString(),
@@ -105,7 +105,7 @@ const ProjectList = () => {
           </>
         ) : (
           <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-16 lg:grid-cols-3 lg:max-w-full">
-            {projects.map((project:any, index:number) => (
+            {projects.map((project: any, index: number) => (
               <ProjectCard
                 key={index}
                 title={project.title}

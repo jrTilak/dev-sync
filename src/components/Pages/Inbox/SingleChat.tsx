@@ -14,7 +14,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-
 interface SingleChatProps {
   avatar: React.ReactNode;
   name: string;
@@ -27,14 +26,13 @@ const SingleChat: React.FC<SingleChatProps> = ({
   userUid,
   unreadCount,
 }) => {
-  
   const router = useRouter();
   const { app } = useGlobalContext();
   const [user, setUser] = useState(null);
   const { currentUser } = useAuthContext();
   // let config = {
   //   method: "get",
-  //   url: "http://localhost:3000/api/users",
+  //   url: "http://devsync.jrtilak.me/api/users",
   //   headers: {
   //     uid: userUid,
   //   },
@@ -97,8 +95,8 @@ const SingleChat: React.FC<SingleChatProps> = ({
   return (
     <>
       <button
-        onClick={()=>{
-          router.push(`/inbox/someone`)
+        onClick={() => {
+          router.push(`/inbox/someone`);
         }}
         className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2"
       >

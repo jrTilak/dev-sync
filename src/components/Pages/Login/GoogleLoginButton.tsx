@@ -42,7 +42,7 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
         console.log(user);
 
         axios
-          .get("http://localhost:3000/api/users", {
+          .get("http://devsync.jrtilak.me/api/users", {
             headers: {
               uid: user.uid,
             },
@@ -50,7 +50,7 @@ const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({
           .then((res) => {
             if (res.data.status == 404) {
               axios
-                .post("http://localhost:3000/api/users", {
+                .post("http://devsync.jrtilak.me/api/users", {
                   uid: user.uid,
                   name: user.displayName,
                   email: user.email,

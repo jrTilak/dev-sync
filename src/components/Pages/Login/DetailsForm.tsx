@@ -17,19 +17,19 @@ const DetailsForm = () => {
     setFormData(currentUser);
   }, [currentUser]);
 
-  const handleFormChange = (e:any) => {
-    setFormData((prev :any) => ({
+  const handleFormChange = (e: any) => {
+    setFormData((prev: any) => ({
       ...prev,
       ...{ [e.target.name]: e.target.value },
     }));
   };
-  const handleFormSubmit = (e:any) => {
+  const handleFormSubmit = (e: any) => {
     e.preventDefault();
     setIsUpdating(true);
     let data = JSON.stringify(formData);
     let config = {
       method: "put",
-      url: "http://localhost:3000/api/users",
+      url: "http://devsync.jrtilak.me/api/users",
       headers: {
         "Content-Type": "application/json",
       },
@@ -48,14 +48,14 @@ const DetailsForm = () => {
       });
   };
 
-  const onSkillsChange = (e:any) => {
-    setFormData((prev:any) => ({
+  const onSkillsChange = (e: any) => {
+    setFormData((prev: any) => ({
       ...prev,
       ...{ skills: e },
     }));
   };
-  const onInterestsChange = (e:any) => {
-    setFormData((prev:any) => ({
+  const onInterestsChange = (e: any) => {
+    setFormData((prev: any) => ({
       ...prev,
       ...{ interests: e },
     }));
