@@ -43,6 +43,7 @@
     "@next/next/no-unsupported-browser-features": "off",
     "@next/next/no-page-custom-font": "off",
     "@next/next/no-ssr-html": "off",
-    "no-unescaped-entities": "off"
+    "no-unescaped-entities": "off",
+    "react-hooks/exhaustive-deps": "off",
   }
 }
