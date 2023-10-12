@@ -14,7 +14,7 @@ const ProjectList = () => {
     axios
       .request({
         method: "get",
-        url: "https://dev-sync-idq59v1aa-jrtilak.vercel.app/api/projects",
+        url: "https://dev-sync-khaki.vercel.app/api/projects",
         headers: {
           limit: "3",
           page: projectPage.toString(),
