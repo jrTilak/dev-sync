@@ -29,10 +29,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ title, limit, type }) => {
       .then((res) => {
         setProjects(res.data);
         setIsFetching(false);
-        console.log(res.data);
+        console.log("Project Fetch Success", res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Error Fetching Projects", err);
         setIsErrorOccured(true);
         setIsFetching(false);
       });
