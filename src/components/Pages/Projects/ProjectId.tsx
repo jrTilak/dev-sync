@@ -71,7 +71,7 @@ const ProjectId = () => {
               target="_blank"
               className="underline dark:text-violet-400"
             >
-              <span itemProp="name">jrTilak </span>
+              <span itemProp="name">Anurag Dahal </span>
             </a>
             on
             <time dateTime="2021-02-12 15:34:18-0200">Oct 8th 2023</time>
